@@ -104,7 +104,7 @@ elif s == "tg" or s == "tan" or s == "тангенс":
             print("результат ")
             print(math.tan(math.degrees(a)))
 
-elif s == "" or s == ValueError:
+else:
     print("sorry. pick an operation")
 
 
