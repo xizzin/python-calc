@@ -1,0 +1,9 @@
+try:
+    def is_even(num):
+        return num % 2 == 0
+
+    a = float(input("Введите число "))
+    c = is_even(a)
+    print(c)
+except ValueError:
+    print("Введенное значение не было числом/не могло быть воспринято программой как число.")

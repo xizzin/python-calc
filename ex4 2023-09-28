@@ -1,0 +1,13 @@
+try:
+
+    def sum_digits (num):
+        result = sum(map(int, str(abs(num)).replace(".","")))
+        return result
+
+
+    a = int(input("Введите целое число для нахождения суммы его цифр: "))
+    c = sum_digits(a)
+    print("Сумма цифр введеного числа равна", c)
+
+except ValueError:
+    print("Введенное значение не было числом/не могло быть воспринято программой как число.")
