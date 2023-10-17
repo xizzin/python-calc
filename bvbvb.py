@@ -8,17 +8,17 @@ try:
     s = input("Введите название выбранной операции (так как она написана), или ее знак ")
 
     if s == 'сложение' or s == '+':
-        def add(a, b):
-            result = a + b
+        def add(mk, d):
+            result = mk + d
             return result
         a = float(input("введите первое слагаемое "))
         b = float(input("введите второе слагаемое "))
         c = add(a, b)
-        print("result", c)
+        print("результат", c)
 
     elif s == 'вычитание' or s == '-':
-        def minus(a, b):
-            result = a - b
+        def minus(mk, d):
+            result = mk - d
             return result
         a = float(input("введите уменьшаемое "))
         b = float(input("введите вычитаемое "))
@@ -26,8 +26,8 @@ try:
         print("результат", c)
 
     elif s == "умножение" or s == '*':
-        def multiply (a, b):
-            result = a*b
+        def multiply(mk, d):
+            result = mk*d
             return result
         a = float(input("введите первый множитель "))
         b = float(input("введите второй множитель "))
@@ -35,17 +35,21 @@ try:
         print("результат", c)
 
     elif s == "деление" or s == "/":
-        def div (a, b):
-            result = a/b
+        def div(mk, d):
+            result = mk/d
             return result
         a = float(input("введите делимое "))
         b = float(input("введите делитель "))
-        c = div(a, b)
-        print("результат", c)
+
+        if b != 0:
+            c = div(a, b)
+            print("результат", c)
+        if b == 0:
+            print("Деление на ноль невозможно.")
 
     elif s == "корень числа" or s == "√":
-        def root (a, b):
-            result = pow(b, 1./a)
+        def root(mk, d):
+            result = pow(d, 1./mk)
             return result
         a = float(input("введите степень корня "))
         b = float(input("введите число под корнем "))
@@ -53,8 +57,8 @@ try:
         print("результат", c)
 
     elif s == "возведение в степень" or s == "^":
-        def expo(a, b):
-            result = pow(b, a)
+        def expo(mk, d):
+            result = pow(d, mk)
             return result
         a = float(input("введите степень корня "))
         b = float(input("введите число, возводимое в степень "))
@@ -62,37 +66,38 @@ try:
         print("результат", c)
 
     elif s == "факториап" or s == "!":
-        def facc(a):
-            if a == 1:
+        def facc(mk):
+            if mk == 1:
                 return 1
-            result=facc(a - 1) * a
+            result = facc(mk - 1) * mk
             return result
+
         a = int(input("введите число, факториал которого вы хотите найти"))
-        if a>21:
+        if a > 21:
             print("Простите, данная программа не может высчитать факториал числа, большего 21")
         else:
             c = facc(a)
             print("результат", c)
 
     elif s == "sin" or s == "синус":
-        def sin(a):
-            result=math.sin(a)
+        def sin(mk):
+            result = math.sin(mk)
             return result
         a = float(input("Введите градусное значение угла, синус которого вы хотите найти"))
         c = sin(a)
         print("синус равен", c)
 
     elif s == "cos" or s == "косинус":
-        def cos(a):
-            result=math.cos(a)
+        def cos(mk):
+            result = math.cos(mk)
             return result
         a = float(input("Введите градусное значение угла, косинус которого вы хотите найти"))
         c = cos(a)
         print("косинус равен", c)
 
     elif s == "tg" or s == "tan" or s == "тангенс":
-        def tan(a):
-            result=math.tan(a)
+        def tan(mk):
+            result = math.tan(mk)
             return result
         a = float(input("Введите градусное значение угла, тангенс которого вы хотите найти"))
         c = tan(a)
